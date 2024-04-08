@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>登录</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='front/css/login.css')}}"/>
+    <link rel="shortcut icon" href="{{url_for('static',filename='front/css/img/icon.ico')}}">
+</head>
+<body>
+    <div class="wrapper">
+        <a href="/"><img src="{{url_for('static',filename='front/css/images/back.png')}}"/></a>
+        <form action="login" method="post">
+            <input type="hidden" name="csrf-token" value="{{ csrf_token() }}">
+            <h1>登&nbsp;录</h1>
+            <div class="input-box">
+                <input type="text" name="email" id="email" placeholder="邮箱" required />
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" id="password" placeholder="密码" required />
+            </div>
+            <span>{{ eo }}</span>
+            <div class="remeber-forgot">
+                <label>
+                     &nbsp;&nbsp;<input type="checkbox" />记住我<br><br>
+                </label>
+            </div>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="from-group">
+                        <ul>
+                            {% for message in messages %}
+                                <li class="text-danger">{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+            {% endwith %}
+            <button type="submit" class="btn" id="submit-btn">登录</button>
+            <div class="remeber-link">
+                <p>&nbsp;</p>
+                <p>&nbsp; &nbsp;没有帐户？ <a href="{{ url_for('user.register') }}">点我注册</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>启承京韵</title>
+		 <link rel="stylesheet" href="{{url_for('static',filename='front/css/index.css')}}">
+		 <!-- <link rel="stylesheet" href="css/nav.css"> -->
+		 <link rel="shortcut icon" href="{{url_for('static',filename='front/css/img/icon.ico')}}">
+</head>
+<body>
+	<div id="kaimu">
+		<div id="kaimu_left" class="fangkuai">
+		</div>
+		<div id="kaimu_right" class="fangkuai">
+		</div>
+	</div>
+	<div id="homenav">
+		<div class="navtitle"><strong>Culture</strong>|京剧</div>
+		<div id="homenav_title">
+			<a href="/" class="home">首页</a>
+			<a href="{{ url_for('front.lianpu') }}" class="lianpu">脸谱</a>
+			<a href="{{ url_for('front.jumu') }}" class="about">剧目</a>
+			<a href="{{ url_for('front.blog') }}" class="blog">博客</a>
+			<div class="navanim home"></div>
+			<div class="none"></div>
+		</div>
+		<div id="homenav_login">
+			{% if g.user %}
+				<a href="{{ url_for('user.profile',user_id = g.user.id) }}" class="login">{{ g.user.username }}</a>
+				<a href="{{ url_for('user.logout') }}" class="join">退出</a>
+			{% else %}
+				<a href="{{ url_for('user.login') }}" class="login">登录</a>
+				<a href="{{ url_for('user.register') }}" class="join">注册</a>
+			{% endif %}
+		</div>
+	</div>
+	<main>
+		<div id="bg">
+			<div class="saying">
+				<div class="saying_1">
+					怕流水年华春去渺<br /><br />一样心情别样娇
+				</div>
+				<div class="saying_2">
+					吉日良辰当欢笑为什么鲛珠化泪抛
+				</div>
+				<div class="saying_3">
+					见胡婆好一似空山闻籁
+				</div>
+				<div class="saying_4">
+					你可曾见我夫与我萱台
+				</div>
+				<div class="saying_5">
+					她泪自弹<br /><br />声续断<br /><br />似杜鹃<br /><br />啼别院
+				</div>
+				<div class="saying_6">
+					巴峡哀猿<br /><br />动人心弦<br /><br />好不惨然
+				</div>
+			</div>
+			<div class="jing">
+				京
+			</div>
+			<div class="ju">
+				剧
+			</div>
+		</div>
+		<div id="opera">
+			<div id="opera_mid">
+				<video src="{{url_for('static',filename='front/css/img/opera_example.mp4')}}" muted="muted" autoplay="autoplay" loop="loop" controls></video>
+				<div id="opera_list">
+					<h2>戏曲列表</h2>
+					<ul>
+						<li><a href="#">《西施》</a></li>
+						<li><a href="#">《霸王别姬》</a></li>
+						<li><a href="#">《空城计》</a></li>
+						<li><a href="#">《贵妃醉酒》</a></li>
+						<li><a href="#">《锁麟囊》</a></li>
+						<li><a href="#">《定军山》</a></li>
+					</ul>
+				</div>
+				<button> <a href="#">more>>></a> </button>
+			</div>
+			<img src="{{url_for('static',filename='front/css/img/opera_bg.jpg')}}" alt="" id="opera_bg">
+		</div>
+		<div id="fourlist">
+			<h2>四大脸谱</h2>
+			<ul>
+				<li>
+					<div class="tiao">
+						<h1><a href="{{ url_for('front.sheng') }}">生</a></h1>
+						<img src="{{url_for('static',filename='front/css/img/生.png')}}" alt="" class="role">
+						<div class="kuai"></div>
+						<img src="{{url_for('static',filename='front/css/img/bg1.jpg')}}" alt="" class="four_bg">
+					</div>
+				</li>
+				<li>
+					<div class="tiao">
+						<h1><a href="{{ url_for('front.dan') }}">旦</a></h1>
+						<img src="{{url_for('static',filename='front/css/img/旦.png')}}" alt="" class="role">
+						<div class="kuai"></div>
+						<img src="{{url_for('static',filename='front/css/img/bg3.jpg')}}" alt="" class="four_bg">
+					</div>
+				</li>
+				<li>
+					<div class="tiao">
+						<h1><a href="{{ url_for('front.jing') }}">净</a></h1>
+						<img src="{{url_for('static',filename='front/css/img/净.png')}}" alt="" class="role">
+						<div class="kuai"></div>
+						<img src="{{url_for('static',filename='front/css/img/bg2.jpg')}}" alt="" class="four_bg">
+					</div>
+				</li>
+				<li>
+					<div class="tiao">
+						<h1><a href="{{ url_for('front.chou') }}">丑</a></h1>
+						<img src="{{url_for('static',filename='front/css/img/丑.png')}}" alt="" class="role">
+						<div class="kuai"></div>
+						<img src="{{url_for('static',filename='front/css/img/bg4.jpg')}}" alt="" class="four_bg">
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div id="lunbo">
+
+			<div id="wrap">
+				<!-- 图片列表 -->
+				<div class="img-list">
+					<img src="{{url_for('static',filename='front/css/img/01.jpg')}}" />
+					<img src="{{url_for('static',filename='front/css/img/02.jpg')}}" />
+					<img src="{{url_for('static',filename='front/css/img/03.jpg')}}" />
+					<img src="{{url_for('static',filename='front/css/img/04.jpg')}}" />
+					<img src="{{url_for('static',filename='front/css/img/05.jpg')}}" />
+				</div>
+				<!-- 小箭头 -->
+				<div class="arrow">
+					<a href="javascript:;" class="left"><</a>
+					<a href="javascript:;" class="right">></a>
+				</div>
+				<!-- 小圆点 -->
+				<ul class="circle-list">
+					<li class="circle active" data-n="0"></li>
+					<li class="circle" data-n="1"></li>
+					<li class="circle" data-n="2"></li>
+					<li class="circle" data-n="3"></li>
+					<li class="circle" data-n="4"></li>
+				</ul>
+			</div>
+			<div class="statement">
+				<p>
+					@2024|BY.启承京韵<br />网站版权归启承京韵所有<br />Cease to struggle and cease to live
+				</p>
+			</div>
+		</div>
+	</main>
+	<script src="{{url_for('static',filename='front/js/nav.js')}}"></script><!-- d导航栏 -->
+	<script src="{{url_for('static',filename='front/js/lunbo.js')}}"></script><!-- 轮播图 -->
+	<script src="{{url_for('static',filename='front/js/opera.js')}}"></script><!-- 四大脸谱块跳转 -->
+</body>
+</html>

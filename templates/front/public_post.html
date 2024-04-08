@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <title>博客</title>
+    <link href="https://unpkg.com/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='front/css/public_post.css')}}">
+    <link rel="shortcut icon" href="{{url_for('static',filename='front/css/img/icon.ico')}}">
+    <style>
+        #editor—wrapper {
+            border: 1px solid #ccc;
+            z-index: 100; /* 按需定义 */
+        }
+
+        #toolbar-container {
+            border-bottom: 1px solid #ccc;
+        }
+
+        #editor-container {
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="homenav">
+        <div class="navtitle"><strong>Culture</strong>|京剧</div>
+        <div id="homenav_title">
+            <a href="/" class="home">首页</a>
+            <a href="{{ url_for('front.lianpu') }}" class="lianpu">脸谱</a>
+            <a href="{{ url_for('front.jumu') }}" class="about">剧目</a>
+            <a href="{{ url_for('front.blog') }}" class="blog">博客</a>
+
+            <div class="none"></div>
+        </div>
+    </div><br><br><br><br>
+    <div>
+        <h1 style="text-align: center;">发布帖子</h1><br />
+        <form action="" method="post">
+            <div class="form-group form-group_1">
+                <label>标题</label>
+                <input type="text" class="form-control" name="title">
+            </div>
+            <br />
+            <div class="form-group form-group_1">
+                <label>板块</label>
+                <select name="board_id" class="form-control">
+                    {% for board in boards %}
+                    <option value="{{ board.id }}">{{ board.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <br />
+        </form>
+        <div id="editor—wrapper">
+            <div id="toolbar-container"><!-- 工具栏 --></div>
+            <div id="editor-container"><!-- 编辑器 --></div>
+        </div>
+    </div>
+    <div class="btn_0">
+        <button class="btn btn-danger" id="submit-btn">发布</button>
+    </div>
+    <textarea type="hidden" id="editor-content-textarea" name="editor-content-textarea" style="width: 1325px; height: 10px; outline: none;" readonly=""></textarea>
+    <script type="text/javascript">document.getElementById("editor-content-textarea").style.visibility = "hidden";</script>
+    <script src="{{ url_for('static',filename='common/zlajax.js') }}"></script>
+    <script src="https://unpkg.com/@wangeditor/editor@latest/dist/index.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        const { createEditor, createToolbar } = window.wangEditor
+
+        const editorConfig = {
+            placeholder: 'Type here...',
+            MENU_CONF: {
+                uploadImage: {
+                    fieldName: 'image',
+                    server: '/upload/image'
+                }
+            },
+            onChange(editor) {
+                const html = editor.getHtml()
+                console.log('editor content', html)
+                document.getElementById('editor-content-textarea').innerHTML = html
+                // 也可以同步到 <textarea>
+            }
+        }
+
+        const editor = createEditor({
+            selector: '#editor-container',
+            html: '<p><br></p>',
+            config: editorConfig,
+            mode: 'default', // or 'simple'
+        })
+
+        const toolbarConfig = {}
+
+        const toolbar = createToolbar({
+            editor,
+            selector: '#toolbar-container',
+            config: toolbarConfig,
+            mode: 'default', // or 'simple'
+        })
+
+
+        $("#submit-btn").click(function (event) {
+            event.preventDefault();
+
+            var title = $("input[name='title']").val();
+            var board_id = $("select[name='board_id']").val();
+            var content = $("textarea[name='editor-content-textarea']").val();
+
+            zlajax.post({
+                url: "/post/public",
+                data: { title, board_id, content }
+            }).done(function (data) {
+                setTimeout(function () {
+                    window.location = "/blog";
+                }, 2000);
+            }).fail(function (error) {
+                alert(error.message);
+            });
+        });
+    </script>
+</body>
+</html>

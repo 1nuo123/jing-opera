@@ -1,0 +1,29 @@
+﻿body {
+    width:70%;
+    margin:auto;
+    background: url('../css/img/2139181341.jpg')no-repeat center top ;
+    background-size:800px;
+}
+
+.back {
+    width: 100px;
+    height: 100px;
+    float:left;
+    margin-top:40px;
+    background: url(../css/img/3dd172a3_E839090_a2b11036.png)no-repeat;
+    background-size:contain;
+}
+
+.profile-box {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.avatar {
+    width: 100px;
+}
+
+.table {
+    font-size:25px;
+    line-height:60px;
+}

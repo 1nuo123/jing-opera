@@ -1,0 +1,42 @@
+﻿.sheng {
+    width: 100%;
+    height: 100vh;
+    margin-top: -21px;
+    background: url(img/guoc.jpg)no-repeat center;
+    background-size: cover;
+}
+
+.sheng_main_1 {
+    font-size: 300px;
+    display: block;
+    float: left;
+    position: absolute;
+    left: 14%;
+    top: 52%;
+    color: rgb(215,170,85);
+    font-family: 楷体;
+}
+
+.sheng_main_2 {
+    font-size: 18px;
+    display: block;
+    float: right;
+    position: absolute;
+    right: 2%;
+    top: 30%;
+    color: #fff;
+    font-family: 楷体;
+    line-height: 35px;
+}
+
+.sheng_main_3 {
+    font-size: 18px;
+    display: block;
+    float: right;
+    position: absolute;
+    right: 14%;
+    top: 8%;
+    color: #fff;
+    font-family: 楷体;
+    line-height: 35px;
+}

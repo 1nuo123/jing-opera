@@ -1,0 +1,460 @@
+@charset "utf-8";
+*{
+    padding: 0;
+    margin: 0;
+}
+/*开幕动画*/
+#kaimu{
+    width: 100%;
+    height:100vh;
+    position: fixed;
+    overflow: hidden;
+    animation: op 7s;
+    animation: z_index 6s;
+}
+.fangkuai{
+    /*background-color: red;*/
+    width:50%;
+    height: 100vh;
+}
+#kaimu_left{
+    z-index: 15;
+    background-image: url("../css/img/kaimu_left.jpg");
+    background-repeat: no-repeat;
+    background-size:100%;
+    position: absolute;
+    left: 0;
+    animation:left_slide 6s;
+    animation-fill-mode:forwards;
+    /*left: -1900px;*/
+}
+#kaimu_right{
+    background-image: url("../css/img/kaimu_right.jpg");
+    background-repeat: no-repeat;
+    background-size:100%;
+    background-position-x : right;
+    position: absolute;
+    right: 0;
+    animation: right_slide 6s;
+    animation-fill-mode:forwards;
+}
+@keyframes left_slide{
+    from{left: 0;}
+    to{left: -2500px;}
+}
+@keyframes right_slide{
+    from{right: 0;}
+    to{right: -2500px;}
+}
+@keyframes op {
+    from{opacity: 1;}
+    to{opacity:0 ;}
+}
+@keyframes z_index{
+    from{z-index: 15;}
+    to{z-index: -5;}
+}
+/*导航栏*/
+#homenav{
+    position: fixed;
+    display: flex;
+    text-align: center;
+    width: 100%;
+    height: 70px;
+    top: 0px;
+    background-color: 0;
+    overflow: hidden;
+    font-size: 20px;
+    color: rgb(234, 247, 255);
+    z-index: 10;
+}
+#homenav .navtitle{
+    margin-left: 5%;
+    width: 15%;
+}
+#homenav .navtitle strong{
+    font-size: 45px;
+    font-weight: bolder;
+}
+#homenav_title{ 
+    width: 425px;
+    position: relative;
+    display: flex;
+    left: 8%;
+}
+#homenav a{
+   display: block;
+   text-decoration: none;
+   z-index: 5;
+   height: inherit;
+   line-height: 70px;
+   width: 120px;  
+   font-weight: bolder;
+   color: white;
+   transition: 0.5s;
+}
+
+#homenav .navanim{
+    position: absolute;
+    height: inherit;
+    z-index: 0;
+    background-color: rgb(245,174,37);
+    opacity: 0.7;
+    border-radius: 5px;
+    left:-1%;
+    transition:  all .5s ease 0s;
+    width: 100px;
+    height: 70px;
+}
+#homenav_login{
+    width: 125px;
+   /* border: 5px red solid;*/
+    position: absolute;
+    display: flex;
+    left:80%;
+    
+}
+
+#homenav .lianpu:hover~.navanim{
+    width: 100px;
+    left: 20%;
+}
+
+#homenav .about:hover~.navanim{
+    width: 100px;
+    left: 41.5%;
+}
+
+#homenav .blog:hover~.navanim{
+     width: 100px;
+    left: 63%;  
+}
+
+#homenav .none{
+    width: 20%;
+}
+/*主体部分*/
+main{
+    width: 100%;
+}
+
+#fourlist{
+    width: 100%;
+    text-align: center;
+}
+
+#bg {
+    width:100%;
+    height:100vh;
+    background:url("../css/img/bg.png")no-repeat;
+    background-size:cover;
+}
+
+.saying {
+    float:left;
+}
+
+.saying_1 {
+    width: 30px;
+    font-size: 28px;
+    font-weight: 700;
+    font-family: 楷体;
+    position: absolute;
+    background: transparent;
+    float: left;
+    margin-left: 400px;
+    margin-top: 85px;
+}
+
+.saying_2 {
+    width: 30px;
+    font-size: 28px;
+    font-weight: 700;
+    font-family: 楷体;
+    position: absolute;
+    background: transparent;
+    float: left;
+    margin-left: 340px;
+    margin-top: 85px;
+}
+
+.saying_3 {
+    width: 30px;
+    font-size: 28px;
+    font-weight: 700;
+    font-family: 楷体;
+    position: absolute;
+    background: transparent;
+    float: left;
+    margin-left: 280px;
+    margin-top: 85px;
+}
+
+.saying_4 {
+    width: 30px;
+    font-size: 28px;
+    font-weight: 700;
+    font-family: 楷体;
+    position: absolute;
+    background: transparent;
+    float: left;
+    margin-left: 220px;
+    margin-top: 85px;
+}
+
+.saying_5 {
+    width: 30px;
+    font-size: 28px;
+    font-weight: 700;
+    font-family: 楷体;
+    position: absolute;
+    background: transparent;
+    float: left;
+    margin-left: 160px;
+    margin-top: 85px;
+}
+
+.saying_6 {
+    width: 30px;
+    font-size: 28px;
+    font-weight: 700;
+    font-family: 楷体;
+    position: absolute;
+    background: transparent;
+    float: left;
+    margin-left: 100px;
+    margin-top: 85px;
+}
+
+#opera{
+    position: relative;
+    width: 100%;
+    height:100vh;
+}
+
+#opera_bg{
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top:0;
+    left: 0;
+}
+#opera_mid{
+    position: relative;
+    top:200px;
+    margin:auto;
+    width: 1000px;
+    height: 400px;
+    border: 2px white solid;
+    box-shadow: 10px 10px 10px black;
+    background-color: rgb(204,98,98,0.8);
+}
+#opera video{
+    height: 400px;
+    float: left;
+}
+#opera_list{
+    position: absolute;
+    top:30px;
+    right: 0px;
+    width: 295px;
+}
+#opera_list h2{
+    text-align: center;
+}
+#opera_list li{
+    border-bottom: 1px white solid;
+    width:100%;
+    margin: 20px 0;
+}
+#opera_list a,button a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+button{
+    background-color: rgb(0,0,0,0);
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    border-style: none;
+}
+#fourlist h2{
+    font-size: 40px;
+}
+#fourlist li{
+    list-style: none;
+}
+.tiao{
+    position: relative;
+    height:250px;
+    overflow: hidden;
+    box-sizing: border-box;/*内边框*/
+    transform: all 0.5s;
+    
+}
+.tiao a{ 
+    line-height: 250px;
+    text-decoration: none;
+    color: white;
+}
+.tiao div{/*.kuai*/
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: -1; 
+    transition: all 0.5s;
+}
+.role{
+    position: absolute;
+    transform:scale(1.3);
+    right: 15%;
+    top:10px;
+    opacity: 0;
+    transition: all 0.5s;
+}
+.four_bg{
+    width: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: -2;
+    transition: all 0.5s;
+}
+.tiao:hover{ 
+    border: 7px solid white;
+    border-left: 3px solid white;
+    border-right:3px solid white;
+
+}
+.tiao:hover .role{
+    opacity: 1;
+    transition: all 0.5s;
+}
+.tiao:hover .four_bg{
+    transform:scale(1.3);
+    transition: all 0.5s;
+}
+.tiao:hover .kuai{
+    opacity: 0.1;
+    transition: all 0.5s;
+}
+/*轮播图*/
+#lunbo{
+    width: 100%;
+    height: 1000px;
+    position: relative;
+    background: url("../css/img/bottom_bg_b30cb11.png")no-repeat bottom;
+    background-size:contain;
+    background-color:rgb(8,48,78);
+    z-index:1;
+}
+
+#lunbo_bg{
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    top:0;
+    left: 0;
+}
+ul {
+    list-style: none;
+}
+#wrap {
+    overflow: hidden;
+    position: relative;
+    top:100px;
+    width: 650px;
+    height: 380px;
+    box-shadow: 10px 10px 10px black;
+    border-radius: 30px;
+    margin: 0 auto;
+}
+#wrap .img-list {
+    display: flex;
+    position: relative;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s ease;
+}
+#wrap .img-list img {
+    width: 100%;
+    cursor: pointer;
+}
+#wrap a {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    display: block;
+    width: 40px;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    user-select: none;
+    font-size: 30px;
+    text-align: center;
+    line-height: 70px;
+    text-decoration: none;
+}
+#wrap a.left {
+    left: 0;
+}
+
+#wrap a.right {
+    right: 0;
+}
+.circle-list {
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 240px;
+    height: 40px;
+    z-index: 8;
+}
+.circle-list > .circle {
+    margin: 0 5px;
+    width: 30px;
+    height: 30px;
+    background-color: #ecf0f1;
+    border-radius: 50%;
+}
+.circle-list > .circle.active  {
+    background-color: #e74c3c;
+}
+
+.statement {
+    width: 100%;
+    height: 90px;
+    background: transparent;
+    margin-top:520px;
+    text-align: center;
+    border-top-color: #fff;
+    backdrop-filter: blur(0px);
+    font-size:16px;
+    line-height:28px;
+}
+
+.jing {
+    font-size:250px;
+    float:left;
+    margin-left:30%;
+    margin-top:5%;
+    font-family:楷体;
+}
+
+.ju {
+    font-size:250px;
+    float:left;
+    margin-top:20%;
+    font-family:楷体;
+    color:#fff;
+}

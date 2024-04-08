@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}{% endblock %}</title>
+    {% block head %}{% endblock %}
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static',filename='/front/css/base.css') }}" />
+    <link rel="shortcut icon" href="{{url_for('static',filename='front/css/img/icon.ico')}}">
+</head>
+<body>
+    <div id="homenav">
+        <div class="navtitle"><strong>Culture</strong>|京剧</div>
+        <div id="homenav_title">
+            <a href="/" class="home">首页</a>
+            <a href="{{ url_for('front.lianpu') }}" class="lianpu">脸谱</a>
+            <a href="" class="about">剧目</a>
+            <a href="{{ url_for('front.blog') }}" class="blog">博客</a>
+            <div class="none"></div>
+        </div>
+    </div>
+    {% block body %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,218 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#homenav{
+    position: fixed;
+    display: flex;
+    text-align: center;
+    width: 100%;
+    height: 70px;
+    top: 0px;
+    background-color: 0;
+    overflow: hidden;
+    font-size: 20px;
+    color: rgb(234, 247, 255);
+    z-index: 10;
+}
+#homenav .navtitle{
+    margin-left: 5%;
+    width: 15%;
+}
+#homenav .navtitle strong{
+    font-size: 50px;
+    font-weight: bolder;
+}
+#homenav_title{ 
+    width: 425px;
+    position: relative;
+    display: flex;
+    left: 8%;
+}
+#homenav a{
+   display: block;
+   text-decoration: none;
+   z-index: 5;
+   height: inherit;
+   line-height: 70px;
+   width: 120px;  
+   font-weight: bolder;
+   color: white;
+   transition: 0.5s;
+}
+
+#homenav .navanim{
+    position: absolute;
+    height: inherit;
+    z-index: 0;
+    background-color: rgb(245,174,37);
+    opacity: 0.7;
+    border-radius: 5px;
+    left:41.5%;
+    transition:  all .5s ease 0s;
+    width: 100px;
+    height: 70px;
+}
+#homenav_login{
+    width: 125px;
+   /* border: 5px red solid;*/
+    position: absolute;
+    display: flex;
+    left:80%;
+    
+}
+
+#homenav .lianpu:hover~.navanim{
+    width: 100px;
+    left: 20%;
+}
+
+#homenav .home:hover~.navanim{
+    width: 100px;
+    left: -1%;
+}
+
+#homenav .blog:hover~.navanim{
+     width: 100px;
+    left: 63%;  
+}
+
+#homenav .none{
+    width: 20%;
+}
+
+body {
+    background:url("../css/img/jumu_bg.png") no-repeat top center;
+    background-size: cover;
+}
+
+main {
+    height: 380vh;
+    width: 80%;
+    position: relative;
+
+    margin: auto;
+    display: flex;
+    overflow: hidden;
+}
+#juanzhou{
+    width: 240px;
+    height: 500px;
+    background:url("../css/img/juanzhou.png") no-repeat top center;
+    background-size: cover;
+    display: block;
+    float: left;
+    margin-right:30px;
+    text-align: center;
+    padding-top: 40px;
+}
+#wutai{
+    width: 75%; 
+    height: 360vh;
+    background-color: #FFFDEE;
+    display: block;
+
+}
+#wutai h1{
+    text-align: center;
+    line-height: 65px;
+}
+#wutai ul{
+    width: 100%;
+    list-style: none;
+
+}
+ul li{
+    display: flex;
+    width: 100%;
+    margin: 20px 0;
+}
+hr{
+    color:black;
+}
+.left,.right{   
+    display: block;
+}
+.left{
+    width: 28%;
+    height: 200px;
+    margin-left: 20px;
+    overflow: hidden;
+}
+.left img{
+    width:80%;
+}
+.right{
+    width: 68%;
+}
+.title{
+    width: 100%;
+    height: 20px;
+    font-size: 16px;
+    position: relative;
+    line-height: 16px;
+   /* border-bottom: 1px black solid;*/
+}
+.more{
+    position: absolute;
+    top:-5px;
+    right :20px;
+    text-decoration: none;
+    color: black;
+
+}
+p{
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.l_1 {
+    background: url("../css/img/jdzx-1.jpg")no-repeat;
+    background-size: 200px;
+}
+
+.l_2 {
+    background: url("../css/img/jdzx-2.jpg")no-repeat;
+    background-size: 200px;
+}
+
+.l_3 {
+    background: url("../css/img/jdzx-3.jpg")no-repeat;
+    background-size: 200px;
+}
+
+.l_4 {
+    background: url("../css/img/jdzx-4.jpg")no-repeat;
+    background-size: 200px;
+}
+
+.l_5 {
+    background: url("../css/img/jdzx-5.jpg")no-repeat;
+    background-size: 200px;
+}
+
+.l_6 {
+    background: url("../css/img/jdzx-6.jpg")no-repeat;
+    background-size: 200px;
+}
+
+.l_7 {
+    background: url("../css/img/jdzx-7.jpg")no-repeat;
+    background-size: 200px;
+}
+
+.l_8 {
+    background: url("../css/img/jdzx-8.jpg")no-repeat;
+    background-size: 200px;
+}
+
+.l_9 {
+    background: url("../css/img/jdzx-9.jpg")no-repeat;
+    background-size: 200px;
+}
+
+.l_10 {
+
+    background:url("../css/img/jdzx-10.jpg")no-repeat;
+    background-size: 200px;
+}

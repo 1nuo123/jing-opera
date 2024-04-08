@@ -1,0 +1,127 @@
+﻿* {
+    margin:0;
+    padding:0;
+}
+
+/*导航栏*/
+#homenav{
+    position: fixed;
+    display: flex;
+    text-align: center;
+    width: 100%;
+    height: 70px;
+    top: 0px;
+    background-color: 0;
+    overflow: hidden;
+    font-size: 20px;
+    color: red;
+    z-index: 10;
+}
+#homenav .navtitle{
+    margin-left: 5%;
+    width: 15%;
+}
+#homenav .navtitle strong{
+    font-size: 45px;
+    font-weight: bolder;
+}
+#homenav_title{
+    width: 425px;
+    position: relative;
+    display: flex;
+    left: 8%;
+}
+#homenav a{
+   display: block;
+   text-decoration: none;
+   z-index: 5;
+   height: inherit;
+   line-height: 70px;
+   width: 120px;
+   font-weight: bolder;
+   color: red;
+   transition: 0.5s;
+}
+
+#homenav .navanim{
+    position: absolute;
+    height: inherit;
+    z-index: 0;
+    background-color: rgb(245,174,37);
+    opacity: 0.7;
+    border-radius: 5px;
+    left:-1%;
+    transition:  all .5s ease 0s;
+    width: 100px;
+    height: 70px;
+}
+#homenav_login{
+    width: 125px;
+   /* border: 5px red solid;*/
+    position: absolute;
+    display: flex;
+    left:80%;
+
+}
+
+#homenav .lianpu:hover~.navanim{
+    width: 100px;
+    left: 20%;
+}
+
+#homenav .about:hover~.navanim{
+    width: 100px;
+    left: 41.5%;
+}
+
+#homenav .blog:hover~.navanim{
+     width: 100px;
+    left: 63%;
+}
+
+#homenav .none{
+    width: 20%;
+}
+
+body {
+    background: url("../css/img/41.jpg") no-repeat;
+    background-size: cover;
+}
+
+.form-group {
+    width:80%;
+    margin:auto;
+}
+
+.form-group_1 {
+    font-size:25px;
+    font-family:楷体;
+}
+
+.form-group_1 input{
+    height:25px;
+}
+
+.form-control option {
+    height: 20px;
+    cursor: pointer;
+}
+
+.btn_0 button {
+    width: 70px;
+    height: 45px;
+    margin-top: 10px;
+    font-size: 20px;
+    float: right;
+    margin-right:10%;
+    border-radius: 10px;
+    background-color: dodgerblue;
+    border: 2px solid dodgerblue;
+    color:#fff;
+}
+
+.btn_0 button:focus {
+    background-color:#fff;
+    color:dodgerblue;
+}
+

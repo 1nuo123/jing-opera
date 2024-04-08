@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='front/css/register.css') }}"/>
+    <link rel="shortcut icon" href="{{url_for('static',filename='front/css/img/icon.ico')}}">
+    <script src="{{ url_for('static',filename='common/zlajax.js') }}"></script>
+
+</head>
+<body>
+    <div class="wrapper">
+        <a href="/"><img src="{{url_for('static',filename='front/css/images/back.png')}}" /></a>
+        <form action="{{ url_for('user.register') }}" method="post" id="register-form">
+            <input type="hidden" name="csrf-token" value="{{ csrf_token() }}">
+            <h1>注&nbsp;册</h1>
+            <div class="input-box">
+                <input type="text" placeholder="用户名" name="username" required />
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="密码" name="password" required />
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="确认密码" name="password_confirm" required />
+            </div>
+            <div class="input-box">
+                <input type="email" placeholder="邮箱" required name="email" id="email" />
+            </div>
+            <div class="input-box_1">
+                <input type="text" placeholder="验证码" name="captcha" required />
+                <button type="button" class="captcha" id="captcha-btn">点击获取验证码</button>
+            </div>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div class="form-group">
+                <ul>
+                    {% for message in messages %}
+                    <li class="text-danger">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            {% endwith %}
+            <button type="submit" class="btn">注册</button>
+            <div class="remeber-link">
+                <p>&nbsp;</p>
+                <p>&nbsp; &nbsp;已有账号！ <a href="#">&nbsp;点我登录</a></p>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ url_for('static',filename='front/js/register.js') }}"></script>
+</body>
+</html>

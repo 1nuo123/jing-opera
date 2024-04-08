@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>{{ user.username }}个人中心</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='front/css/profile.css') }}" />
+    <link rel="shortcut icon" href="{{url_for('static',filename='front/css/img/icon.ico')}}">
+</head>
+<body>
+    <a href="/">
+        <div class="back"></div>
+    </a>
+    <div class="profile-box">
+        <br /><hr />
+        <h1 style="text-align: center;">{{ user.username }}个人中心</h1>
+        <form action="" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <br /><br /><br />
+            <table class="table table-bordered mt-5">
+                <tbody>
+                    <tr>
+                        <th width="100px">用户名：</th>
+                        <td>
+                            {% if is_mine %}
+                            <input type="text" name="username" value="{{ user.username }}">
+                            {% else %}
+                            {{ user.username }}
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>头&nbsp;&nbsp;&nbsp;像：</th>
+                        <td>
+                            {% if user.avatar %}
+                            <img src="#" alt="">
+                            {% else %}
+                            <img class="avatar" src="#" alt="">
+                            {% endif %}
+                            {% if is_mine %}
+                            <input type="file" name="avatar" accept="image/jpeg, image/png" value="上传头像">
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>签&nbsp;&nbsp;&nbsp;名：</th>
+                        <td>
+                            {% if is_mine %}
+                            <input type="text" name="signature" value="勇往直前">
+                            {% else %}
+                            勇往直前
+                            {% endif %}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            {% if is_mine %}
+            <div style="text-align: center;">
+                <button class="btn btn-primary">保存</button>
+            </div>
+            {% endif %}
+        </form>
+    </div>
+</body>
+</html>

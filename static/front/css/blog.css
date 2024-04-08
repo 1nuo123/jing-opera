@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*导航栏*/
+#homenav {
+    position: fixed;
+    display: flex;
+    text-align: center;
+    width: 100%;
+    height: 70px;
+    top: 0px;
+    background-color: 0;
+    overflow: hidden;
+    font-size: 20px;
+    color: red;
+    z-index: 10;
+}
+
+    #homenav .navtitle {
+        margin-left: 5%;
+        width: 15%;
+    }
+
+        #homenav .navtitle strong {
+            font-size: 45px;
+            font-weight: bolder;
+        }
+
+#homenav_title {
+    width: 425px;
+    position: relative;
+    display: flex;
+    left: 8%;
+}
+
+#homenav a {
+    display: block;
+    text-decoration: none;
+    z-index: 5;
+    height: inherit;
+    line-height: 70px;
+    width: 120px;
+    font-weight: bolder;
+    color: red;
+    transition: 0.5s;
+}
+
+#homenav .navanim {
+    position: absolute;
+    height: inherit;
+    z-index: 0;
+    background-color: rgb(245,174,37);
+    opacity: 0.7;
+    border-radius: 5px;
+    left: 63%;
+    transition: all .5s ease 0s;
+    width: 100px;
+    height: 70px;
+}
+
+#homenav_login {
+    width: 125px;
+    /* border: 5px red solid;*/
+    position: absolute;
+    display: flex;
+    left: 80%;
+}
+
+#homenav .home:hover ~ .navanim {
+    width: 100px;
+    left: -1%;
+}
+
+#homenav .about:hover ~ .navanim {
+    width: 100px;
+    left: 41.5%;
+}
+
+#homenav .lianpu:hover ~ .navanim {
+    width: 100px;
+    left: 20%;
+}
+
+#homenav .none {
+    width: 20%;
+}
+
+body {
+    background: url("../css/img/41.jpg") no-repeat;
+    background-size:cover;
+}
+
+.post-group {
+    border: 1px solid #ddd;
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 10px;
+    width: 60%;
+    float:left;
+    margin-left:60px;
+}
+
+.post-group-head{
+    overflow: hidden;
+    list-style: none;
+}
+
+.post-group-head li{
+    float: left;
+    padding: 5px 10px;
+}
+
+.post-group-head li a{
+    color:#333;
+}
+
+.post-group-head li.active{
+    background: #ccc;
+}
+
+.post-list-group li{
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+.author-avatar-group{
+    float: left;
+}
+
+.author-avatar-group img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.post-info-group{
+    float: left;
+    border-bottom: 1px solid #e6e6e6;
+    width: 75%;
+    padding-bottom: 10px;
+}
+
+.post-info-group .post-info{
+    margin-top: 10px;
+    font-size: 12px;
+    color: #8c8c8c;
+}
+
+.post-info span{
+    margin-right: 10px;
+}
+
+.sm-container {
+    width: 200px;
+    position: absolute;
+    margin-left: 68%;
+}
+
+.list-group {
+
+
+}
+
+.list-group-item {
+    text-decoration: none;
+}
+
+.litte-group {
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    border: 2px solid #000;
+    margin-top: 5px;
+    line-height: 45px;
+    font-size: 20px;
+    text-align: center;
+    color: red;
+}
+
+.litte-group:hover {
+    background:#8c8c8c;
+}
+
+/* 分页容器样式 */
+.pag {
+    text-align: center;
+}
+
+.pag a {
+    display: inline-block;
+    padding: 5px 10px; 
+    border: 1px solid #ccc; 
+    text-decoration: none; 
+    color: #333; 
+    font-weight: bold; 
+}
+
+
+.pag a:hover {
+    background-color: #ddd; 
+    }
+
+
+.pag a.current {
+    background-color: #4CAF50; 
+    color: white; 
+    border: 1px solid #4CAF50;
+}
