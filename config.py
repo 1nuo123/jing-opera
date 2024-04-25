@@ -28,7 +28,7 @@ class TestingConfig(BaseConfig):
     MAIL_USE_SSL = True
     MAIL_PORT = 465
     MAIL_USERNAME = "920845341@qq.com"
-    MAIL_PASSWORD = "sketsqztvdlsbbgh"
+    MAIL_PASSWORD = "****************"
     MAIL_DEFAULT_SENDER = "920845341@qq.com"
 
     # 缓存配置
