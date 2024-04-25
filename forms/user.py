@@ -42,9 +42,3 @@ class EditProfileForm(BaseForm):
         signature = field.data
         if signature and len(signature) > 100:
             raise ValidationError(message="签名不能超过100个字符")
-
-
-class LoginForm(BaseForm):
-    email = StringField(validators=[Email(message="请输入正确格式的邮箱！")])
-    password = StringField(validators=[Length(min=6, max=20, message="请输入正确长度的密码！")])
-    remember = BooleanField()

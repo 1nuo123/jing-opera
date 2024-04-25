@@ -18,7 +18,7 @@ class TestingConfig(BaseConfig):
     # 数据库的配置变量
     HOSTNAME = '127.0.0.1'
     PORT = '3306'
-    DATABASE = 'Beijing_opera'
+    DATABASE = 'beijing_opera'
     USERNAME = 'root'
     PASSWORD = '000000123'
     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://{}:{}@{}:{}/{}'.format(USERNAME, PASSWORD, HOSTNAME, PORT, DATABASE)
